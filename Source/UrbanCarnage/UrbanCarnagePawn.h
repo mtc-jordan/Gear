@@ -6,6 +6,7 @@
 #include "WeaponBase.h"
 #include "WheeledVehiclePawn.h"
 #include "Core/BulletBase.h"
+#include "Core/DamageInterface_BASE.h"
 #include "UrbanCarnagePawn.generated.h"
 
 class UArrowComponent;
@@ -25,7 +26,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateVehicle, Log, All);
  *  Specific vehicle configurations are handled in subclasses.
  */
 UCLASS(abstract)
-class AUrbanCarnagePawn : public AWheeledVehiclePawn
+class AUrbanCarnagePawn : public AWheeledVehiclePawn, public IDamageInterface_BASE
 {
 	GENERATED_BODY()
 
@@ -97,6 +98,9 @@ public:
 	TArray<TSubclassOf<class UGameplayAbility>> InitialAbilities;
 	UFUNCTION(BlueprintCallable)
 	AWeaponBase* EquipWeapon(TSubclassOf<AWeaponBase> WeaponClass, bool PrimaryWeapon);
+    
+    // Damage interface implementation
+    virtual void Death_Implementation() override;
 	
 
 protected:

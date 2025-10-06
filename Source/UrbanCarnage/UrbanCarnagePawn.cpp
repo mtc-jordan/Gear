@@ -240,6 +240,11 @@ void AUrbanCarnagePawn::Death()
 	}*/
 }
 
+void AUrbanCarnagePawn::Death_Implementation()
+{
+    Death();
+}
+
 void AUrbanCarnagePawn::Destroyed()
 {
 	Super::Destroyed();
