@@ -8,7 +8,7 @@ public class UrbanCarnage : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { 
+        PublicDependencyModuleNames.AddRange(new string[] { 
 			"Core",
 			"CoreUObject",
 			"Engine",
@@ -19,6 +19,9 @@ public class UrbanCarnage : ModuleRules
 			"GameplayAbilities",
 			"GameplayTags",
 			"GameplayTasks",
+            "UMG",
+            "Slate",
+            "SlateCore",
 			"OnlineSubsystem",
 			"OnlineSubsystemUtils",
 			"VoiceChat"
